@@ -1,10 +1,12 @@
 #!/bin/bash
 DESTINATION=$1
-PORT=$2
-CHAT=$3
+TAG=$2
+PORT=$3
+CHAT=$4
+
 
 # Clone Odoo directory
-git clone --depth=1 https://github.com/minhng92/odoo-16-docker-compose $DESTINATION
+git clone --depth=1 --branch odoo-$TAG https://github.com/asierNebiyou/odoo-docker-compose $DESTINATION
 rm -rf $DESTINATION/.git
 
 # Create PostgreSQL directory
@@ -46,4 +48,4 @@ find $DESTINATION -type d -exec chmod 755 {} \;
 # Run Odoo
 docker-compose -f $DESTINATION/docker-compose.yml up -d
 
-echo "Odoo started at http://localhost:$PORT | Master Password: minhng.info | Live chat port: $CHAT"
+echo "Odoo started at http://localhost:$PORT | Master Password: asier | Live chat port: $CHAT"
