@@ -1,10 +1,22 @@
 #!/bin/bash
-DESTINATION=$1
-TAG=$2
-PORT=$3
-CHAT=$4
 
+# Prompt for destination directory
+read -p "Enter the destination directory: " DESTINATION
 
+# Prompt for Odoo version tag
+echo "Select Odoo version tag 16,17 or 18:"
+select TAG in 16 17 18; do
+  case $TAG in
+    16|17|18) break ;;
+    *) echo "Invalid option. Please select 16, 17, or 18." ;;
+  esac
+done
+
+# Prompt for ports
+read -p "Enter the Odoo port (default 10016): " PORT
+PORT=${PORT:-10016}  # Default to 10016 if no input
+read -p "Enter the live chat port (default 20016): " CHAT
+CHAT=${CHAT:-20016}  # Default to 20016 if no input
 # Clone Odoo directory
 git clone --depth=1 --branch odoo-$TAG https://github.com/asierNebiyou/odoo-docker-compose $DESTINATION
 rm -rf $DESTINATION/.git
