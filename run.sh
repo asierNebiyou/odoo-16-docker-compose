@@ -6,7 +6,7 @@ CHAT=$4
 
 
 # Clone Odoo directory
-git clone --depth=1 --branch odoo-$TAG https://github.com/asierNebiyou/odoo-16-docker-compose $DESTINATION
+git clone --depth=1 --branch odoo-$TAG https://github.com/asierNebiyou/odoo-docker-compose $DESTINATION
 rm -rf $DESTINATION/.git
 
 
