@@ -1,10 +1,12 @@
 #!/bin/bash
 DESTINATION=$1
-PORT=$2
-CHAT=$3
+TAG=$2
+PORT=$3
+CHAT=$4
+
 
 # Clone Odoo directory
-git clone --depth=1 --branch odoo-18 https://github.com/asierNebiyou/odoo-16-docker-compose $DESTINATION
+git clone --depth=1 --branch odoo-$TAG https://github.com/asierNebiyou/odoo-16-docker-compose $DESTINATION
 rm -rf $DESTINATION/.git
 
 # Create PostgreSQL directory
