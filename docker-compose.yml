@@ -5,7 +5,7 @@ services:
     user: root
     environment:
       - POSTGRES_USER=odoo
-      - POSTGRES_PASSWORD=odoo16@2022      
+      - POSTGRES_PASSWORD=odoo16  
       - POSTGRES_DB=postgres
     restart: always             # run as a service
     volumes:
@@ -24,7 +24,7 @@ services:
     environment:
       - HOST=db
       - USER=odoo
-      - PASSWORD=odoo16@2022
+      - PASSWORD=odoo16
     volumes:
       #- /etc/timezone:/etc/timezone:ro
       #- /etc/localtime:/etc/localtime:ro
